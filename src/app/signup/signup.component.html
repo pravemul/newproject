@@ -44,7 +44,7 @@
         <div class="form-group">
             <span> Password</span>
             <mat-form-field  class="full-width">
-                <input matInput formControlName="password" class="form-control" />
+                <input type="password" matInput formControlName="password" class="form-control" />
                 <mat-error *ngIf="riderSignUpForm.controls['password'].hasError('required')" class="invalid-feedback">
                     Password is required
                 </mat-error>
@@ -107,7 +107,7 @@
         <div class="form-group">
             <span> Password</span>
             <mat-form-field  class="full-width">
-                <input matInput formControlName="password" class="form-control" />
+                <input type="password" matInput formControlName="password" class="form-control" />
                 <mat-error *ngIf="driverSignUpForm.controls['password'].hasError('required')" class="invalid-feedback">
                     Password is required
                 </mat-error>
