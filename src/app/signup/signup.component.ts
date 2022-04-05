@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormBuilder, Validators } from '@angular/forms';
+import { HttpclientService, Rider, Driver } from '../service/httpclient.service';
 
 @Component({
   selector: 'app-signup',
@@ -8,7 +9,12 @@ import { FormControl, FormBuilder, Validators } from '@angular/forms';
 })
 export class SignupComponent implements OnInit {
 
-  constructor(private formBuilder:FormBuilder) { }
+  riderObj: Rider = new Rider("","","","", "");
+  driverObj: Driver = new Driver("","","","", "", "","","","", 0);
+
+
+  //RK: Passing multiple args in constructor
+  constructor(private formBuilder:FormBuilder, private httpClientService: HttpclientService) { }
 
   profileType: string="rider"
   riderSignUpForm=this.formBuilder.group({
@@ -35,9 +41,39 @@ export class SignupComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSignUpSubmit(){
+  onRiderSignUpSubmit(){
     console.log(  this.riderSignUpForm.value,this.riderSignUpForm.controls['firstName'].hasError('required'), this.profileType)
-    
+    this.riderObj = new Rider(
+      this.riderSignUpForm.value['firstName'],
+      this.riderSignUpForm.value['lastName'],
+      this.riderSignUpForm.value['email'],
+      this.riderSignUpForm.value['password'],
+      this.riderSignUpForm.value['phoneNumber']
+    );
+    this.httpClientService.createRider(this.riderObj)
+        .subscribe( data => {
+          alert("Rider added successfully.");
+        });
+  }
+
+  onDriverSignUpSubmit(){
+    console.log(  this.driverSignUpForm.value)
+    this.driverObj = new Driver(
+      this.driverSignUpForm.value['firstName'],
+      this.driverSignUpForm.value['lastName'],
+      this.driverSignUpForm.value['email'],
+      this.driverSignUpForm.value['password'],
+      this.driverSignUpForm.value['phoneNumber'],
+      this.driverSignUpForm.value['carMake'],
+      this.driverSignUpForm.value['carMakeYear'],
+      this.driverSignUpForm.value['carMakeModel'],
+      this.driverSignUpForm.value['licenseNumber'],
+      this.driverSignUpForm.value['licensePlateNumber']
+    );
+    this.httpClientService.createDriver(this.driverObj)
+        .subscribe( data => {
+          alert("Driver added successfully.");
+        });
   }
 
   resetForm(){

@@ -9,7 +9,7 @@
 <label class="custom-control-label" for="driver">Sign Up as Driver</label>
 </div>
 <div *ngIf="profileType==='rider'">
-    <form [formGroup]="riderSignUpForm" (ngSubmit)="onSignUpSubmit()">
+    <form [formGroup]="riderSignUpForm" (ngSubmit)="onRiderSignUpSubmit()">
         <div class="form-group">
             <span>First Name</span>
             <mat-form-field class="full-width">
@@ -72,7 +72,7 @@
 
 <!-- Driver sign up -->
 <div  *ngIf="profileType==='driver'">
-    <form [formGroup]="driverSignUpForm" (ngSubmit)="onSignUpSubmit()">
+    <form [formGroup]="driverSignUpForm" (ngSubmit)="onDriverSignUpSubmit()">
         <div class="form-group">
             <span>First Name</span>
             <mat-form-field class="full-width">
