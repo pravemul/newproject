@@ -4,12 +4,14 @@ import { DriverProfileComponent } from './driver-profile/driver-profile.componen
 import { MapComponent } from './map/map.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { SignupComponent } from './signup/signup.component';
+import { SigninComponent } from './signin/signin.component';
 
 const routes: Routes = [{path: '',redirectTo: '/navigate',pathMatch:'full'},
                         {path: 'navigate', component: NavigationComponent},
                         {path:"signUp", component:SignupComponent},
                         {path:"driver-profile", component:DriverProfileComponent},
-                        {path:"map", component:MapComponent}];
+                        {path:"map", component:MapComponent},
+		                    {path:"signIn", component:SigninComponent}];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
