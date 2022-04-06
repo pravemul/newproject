@@ -1,11 +1,11 @@
-.fa-brands {
+.fa-brands{
     font-size: 5rem;
     color: white;
 }
-.fa-face-smile {
+.fa-face-smile{
     font-size: 2rem;
 }
-h2 {
+h2{
     position: absolute;
     top: 25px;
     left:100px;
@@ -14,25 +14,22 @@ h2 {
    font-family: 'Source Sans Pro', sans-serif;
    font-size: 3rem;
 }
-#heading1 {
-    margin: 0px 60px;
-    text-align: center;
-    padding: 30px;
-    line-height: 15px;
-    border-radius: 10px;
+
+h5{
+    margin-top: 5rem;
+    padding-top: 10rem;
 }
-.btn {
-    box-shadow: 3px 3px black;
-    color: black;
-    background-color: white;
-    
+.star{
+    padding-left: 13rem;
+    font-size:2rem;
 }
-.btn:hover {
-    background-color: #73c074;
-    color: white;
+
+th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
 }
-.note {
-    text-align: right;
-    margin-right: 1rem;
-    color: red;
-}
+
+
+
+
