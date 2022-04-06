@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 
 export class Rider{
   constructor(
@@ -39,6 +39,16 @@ export class HttpclientService {
     console.log("test create rider");
     return this.httpClient.post<Rider>("http://localhost:8080/riders", rider);
   }
+
+  public riderLogin(rider: any) {
+    console.log("test rider login");
+    let queryParams = new HttpParams();
+    queryParams = queryParams.append("email",rider.email);
+    queryParams = queryParams.append("password",rider.password);
+    console.log(queryParams)
+    return this.httpClient.get<Rider>("http://localhost:8080/riders", {params: queryParams});
+  }
+
 
   public createDriver(driver: any) {
     console.log("test create driver");

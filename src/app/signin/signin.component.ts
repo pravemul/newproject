@@ -11,7 +11,10 @@ import { HttpclientService, Rider, Driver } from '../service/httpclient.service'
 
 export class SigninComponent implements OnInit {
 
-  constructor(private formBuilder:FormBuilder) { }
+  riderObj: Rider = new Rider("","","","", "");
+  driverObj: Driver = new Driver("","","","", "", "","","","", 0);
+
+  constructor(private formBuilder:FormBuilder, private httpClientService: HttpclientService) { }
 
   profileType: string="rider"
   riderSignInForm=this.formBuilder.group({
@@ -28,9 +31,31 @@ export class SigninComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSignInSubmit(){
+  onRiderSignInSubmit(){
+    this.riderObj = new Rider(
+      "","",
+      this.riderSignInForm.value['email'],
+      this.riderSignInForm.value['password'],
+      ""
+    );
+    this.httpClientService.riderLogin(this.riderObj)
+        .subscribe( data => {
+          console.log(data);
+          if(data == null)
+            alert("Invalid username and/or password")
+          else
+            alert("Welcome "+data.firstname+" "+data.lastname)
+        });
+  }
+
+  onDriverSignInSubmit(){
     console.log(  this.riderSignInForm.value,this.riderSignInForm.controls['firstName'].hasError('required'), this.profileType)
-    
+    this.driverObj = new Driver(
+      "","",
+      this.driverSignInForm.value['email'],
+      this.driverSignInForm.value['password'],
+      "","","","","",0
+    );
   }
 
   resetForm(){

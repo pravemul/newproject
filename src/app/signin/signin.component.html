@@ -12,7 +12,7 @@
 
 <div *ngIf="profileType==='rider'">
     <h3>Rider Sign-in Form</h3>
-    <form [formGroup]="riderSignInForm"  >
+    <form [formGroup]="riderSignInForm"  (ngSubmit)="onRiderSignInSubmit()">
         
         <div class="form-group">
             <span> Email</span>
@@ -47,7 +47,7 @@
 <!-- Driver sign up -->
 <div  *ngIf="profileType==='driver'">
     <h3>Driver Sign-in Form</h3>
-    <form [formGroup]="driverSignInForm">
+    <form [formGroup]="driverSignInForm" (ngSubmit)="onDriverSignInSubmit()">
         
         <div class="form-group">
             <span> Email</span>
