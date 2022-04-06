@@ -1,11 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl, FormBuilder, Validators } from '@angular/forms';
+import { Component, OnInit} from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormControl, FormBuilder, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpclientService, Rider, Driver } from '../service/httpclient.service';
 
 @Component({
   selector: 'app-signin',
   templateUrl: './signin.component.html',
   styleUrls: ['./signin.component.scss']
 })
+
 export class SigninComponent implements OnInit {
 
   constructor(private formBuilder:FormBuilder) { }
@@ -25,7 +28,7 @@ export class SigninComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSignUpSubmit(){
+  onSignInSubmit(){
     console.log(  this.riderSignInForm.value,this.riderSignInForm.controls['firstName'].hasError('required'), this.profileType)
     
   }
