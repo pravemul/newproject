@@ -21,4 +21,10 @@ export class NavigationComponent implements OnInit {
   navigateToSignIn() {
     this.router.navigate(['/signUp'])
   }
+
+  driverProfile() {
+    this.router.navigate(['/driver-profile'])
+  }
+
+  
 }

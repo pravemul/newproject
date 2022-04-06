@@ -1,0 +1,38 @@
+.fa-brands {
+    font-size: 5rem;
+    color: white;
+}
+.fa-face-smile {
+    font-size: 2rem;
+}
+h2 {
+    position: absolute;
+    top: 25px;
+    left:100px;
+   color: black;
+   padding: 1rem 0rem 0rem 1rem;
+   font-family: 'Source Sans Pro', sans-serif;
+   font-size: 3rem;
+}
+#heading1 {
+    margin: 0px 60px;
+    text-align: center;
+    padding: 30px;
+    line-height: 15px;
+    border-radius: 10px;
+}
+.btn {
+    box-shadow: 3px 3px black;
+    color: black;
+    background-color: white;
+    
+}
+.btn:hover {
+    background-color: #73c074;
+    color: white;
+}
+.note {
+    text-align: right;
+    margin-right: 1rem;
+    color: red;
+}
