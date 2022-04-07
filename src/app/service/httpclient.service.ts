@@ -37,7 +37,7 @@ export class HttpclientService {
 
   public createRider(rider: any) {
     console.log("test create rider");
-    return this.httpClient.post<Rider>("http://localhost:8080/riders", rider);
+    return this.httpClient.post<Rider>("http://localhost:8080/sample/riders", rider);
   }
 
   public riderLogin(rider: any) {
@@ -46,13 +46,13 @@ export class HttpclientService {
     queryParams = queryParams.append("email",rider.email);
     queryParams = queryParams.append("password",rider.password);
     console.log(queryParams)
-    return this.httpClient.get<Rider>("http://localhost:8080/riders", {params: queryParams});
+    return this.httpClient.get<Rider>("http://localhost:8080/sample/riders", {params: queryParams});
   }
 
 
   public createDriver(driver: any) {
     console.log("test create driver");
-    return this.httpClient.post<Driver>("http://localhost:8080/drivers", driver);
+    return this.httpClient.post<Driver>("http://localhost:8080/sample/drivers", driver);
   }
 
   public getDrivers() {

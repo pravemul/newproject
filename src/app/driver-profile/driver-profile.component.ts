@@ -12,11 +12,12 @@ export class DriverProfileComponent implements OnInit {
 
   drivers:any;
 
-  constructor(private service:HttpclientService) { }
+  constructor(private http:HttpClient) { }
 
   ngOnInit(): void {
-    let resp = this.service.getDrivers();
+    let resp = this.http.get("http://localhost:8080/sample/drivers")
     resp.subscribe((data) => this.drivers=data);
+    resp.subscribe((data) => console.log(data));
   }
 
 }
