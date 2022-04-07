@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { faLeaf } from '@fortawesome/free-solid-svg-icons';
+import { HttpclientService, Rider, Driver } from '../service/httpclient.service';
 
 @Component({
   selector: 'app-driver-profile',
@@ -9,13 +10,13 @@ import { faLeaf } from '@fortawesome/free-solid-svg-icons';
 })
 export class DriverProfileComponent implements OnInit {
 
-  driver:any;
+  drivers:any;
 
-  constructor(private http:HttpClient) { }
+  constructor(private service:HttpclientService) { }
 
   ngOnInit(): void {
-    let resp = this.http.get("http://localhost:8085/driverData")
-    resp.subscribe((data) => this.driver=data);
+    let resp = this.service.getDrivers();
+    resp.subscribe((data) => this.drivers=data);
   }
 
 }

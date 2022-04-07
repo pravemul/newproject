@@ -15,6 +15,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 import { HttpClientModule } from '@angular/common/http';
 import { MapComponent } from './map/map.component';
+import { GooglePlaceModule } from 'ngx-google-places-autocomplete';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { MapComponent } from './map/map.component';
     FontAwesomeModule,
     NgbModule,
     HttpClientModule,
+    GooglePlaceModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -52,6 +52,11 @@ export class HttpclientService {
 
   public createDriver(driver: any) {
     console.log("test create driver");
-    return this.httpClient.post<Rider>("http://localhost:8080/drivers", driver);
+    return this.httpClient.post<Driver>("http://localhost:8080/drivers", driver);
   }
+
+  public getDrivers() {
+    return this.httpClient.get<Driver>("http://localhost:8080/drivers");
+  }
+
 }

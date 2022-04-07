@@ -1,185 +1,204 @@
-<p>Rider Form Sign Up</p>
-<div class="custom-control custom-radio">
-    <input id="rider" type="radio" class="custom-control-input" value="rider" name="profileType" [(ngModel)]="profileType" required>
-<label class="custom-control-label" for="rider">Sign Up as Rider</label>
-</div>
+<div class="container mt-4 bg-light rounded align-items-center">
+    <h1 class="text-center">Rider Sign-Up</h1>
 
-<div class="custom-control custom-radio">
-<input id="driver" type="radio" class="custom-control-input" value="driver" name="profileType" [(ngModel)]="profileType" required>
-<label class="custom-control-label" for="driver">Sign Up as Driver</label>
-</div>
-<div *ngIf="profileType==='rider'">
-    <form [formGroup]="riderSignUpForm" (ngSubmit)="onRiderSignUpSubmit()">
-        <div class="form-group">
-            <span>First Name</span>
-            <mat-form-field class="full-width">
-                <input matInput formControlName="firstName" class="form-control" />
-                <mat-error *ngIf="riderSignUpForm.controls['firstName'].hasError('required')" class="invalid-feedback">
-                    First Name is required
-                </mat-error>
-            </mat-form-field>
-        </div>
-        <div class="form-group">
-            <span>Last name</span>
-            <mat-form-field  class="full-width">
-                <input matInput formControlName="lastName" class="form-control" />
-                <mat-error *ngIf="riderSignUpForm.controls['lastName'].hasError('required')" class="invalid-feedback">
-                    Last Name is required
-                </mat-error>
-            </mat-form-field>
-    
-        </div>
-        <div class="form-group">
-            <span> Email</span>
-            <mat-form-field  class="full-width">
-                <input matInput formControlName="email" class="form-control" />
-                <mat-error *ngIf="riderSignUpForm.controls['email'].hasError('required')" class="invalid-feedback">
-                    Email is required
-                </mat-error>
-                <mat-error *ngIf="riderSignUpForm.controls['email'].hasError('pattern')" class="invalid-feedback">
-                    Please enter a Valid email
-                </mat-error>
-            </mat-form-field>
-        </div>
-        <div class="form-group">
-            <span> Password</span>
-            <mat-form-field  class="full-width">
-                <input type="password" matInput formControlName="password" class="form-control" />
-                <mat-error *ngIf="riderSignUpForm.controls['password'].hasError('required')" class="invalid-feedback">
-                    Password is required
-                </mat-error>
-    
-            </mat-form-field>
-        </div>
-        <div class="form-group">
-            <span> Phone Number</span>
-            <mat-form-field  class="full-width">
-                <input matInput formControlName="phoneNumber" class="form-control" />
-                <mat-error *ngIf="riderSignUpForm.controls['phoneNumber'].hasError('required')" class="invalid-feedback">
-                    Phone Number is required
-                </mat-error>
-    
-            </mat-form-field>
-        </div>
-        <div class="form-group">
-            <button class="btn btn-primary">Register</button>
-        </div>
-        <div class="form-group">
-            <button class="btn btn-primary" (click)="resetForm()">Clear Form </button>
-        </div>
-    </form>
-</div>
+    <div class="custom-control custom-radio">
+        <input id="rider" type="radio" class="custom-control-input" value="rider" name="profileType"
+            [(ngModel)]="profileType" required>
+        <label class="custom-control-label" for="rider">Sign Up as Rider</label>
+    </div>
 
-<!-- Driver sign up -->
-<div  *ngIf="profileType==='driver'">
-    <form [formGroup]="driverSignUpForm" (ngSubmit)="onDriverSignUpSubmit()">
-        <div class="form-group">
-            <span>First Name</span>
-            <mat-form-field class="full-width">
-                <input matInput formControlName="firstName" class="form-control" />
-                <mat-error *ngIf="driverSignUpForm.controls['firstName'].hasError('required')" class="invalid-feedback">
-                    First Name is required
-                </mat-error>
-            </mat-form-field>
-        </div>
-        <div class="form-group">
-            <span>Last name</span>
-            <mat-form-field  class="full-width">
-                <input matInput formControlName="lastName" class="form-control" />
-                <mat-error *ngIf="driverSignUpForm.controls['lastName'].hasError('required')" class="invalid-feedback">
-                    Last Name is required
-                </mat-error>
-            </mat-form-field>
-    
-        </div>
-        <div class="form-group">
-            <span> Email</span>
-            <mat-form-field  class="full-width">
-                <input matInput formControlName="email" class="form-control" />
-                <mat-error *ngIf="driverSignUpForm.controls['email'].hasError('required')" class="invalid-feedback">
-                    Email is required
-                </mat-error>
-                <mat-error *ngIf="driverSignUpForm.controls['email'].hasError('pattern')" class="invalid-feedback">
-                    Please enter a Valid email
-                </mat-error>
-            </mat-form-field>
-        </div>
-        <div class="form-group">
-            <span> Password</span>
-            <mat-form-field  class="full-width">
-                <input type="password" matInput formControlName="password" class="form-control" />
-                <mat-error *ngIf="driverSignUpForm.controls['password'].hasError('required')" class="invalid-feedback">
-                    Password is required
-                </mat-error>
-    
-            </mat-form-field>
-        </div>
-        <div class="form-group">
-            <span> Phone Number</span>
-            <mat-form-field  class="full-width">
-                <input matInput formControlName="phoneNumber" class="form-control" />
-                <mat-error *ngIf="driverSignUpForm.controls['phoneNumber'].hasError('required')" class="invalid-feedback">
-                    Phone Number is required
-                </mat-error>
-    
-            </mat-form-field>
-        </div>
-        <div style="display: flex;">
+    <div class="custom-control custom-radio">
+        <input id="driver" type="radio" class="custom-control-input" value="driver" name="profileType"
+            [(ngModel)]="profileType" required>
+        <label class="custom-control-label" for="driver">Sign Up as Driver</label>
+    </div>
+
+    <div *ngIf="profileType==='rider'">
+        <form [formGroup]="riderSignUpForm" (ngSubmit)="onRiderSignUpSubmit()">
             <div class="form-group">
-                <span>Driver License Number</span>
+                <span>First Name</span>
                 <mat-form-field class="full-width">
-                    <input matInput formControlName="licenseNumber" class="form-control" />
-                    <mat-error *ngIf="driverSignUpForm.controls['licenseNumber'].hasError('required')" class="invalid-feedback">
-                       License number is required
+                    <input matInput formControlName="firstName" class="form-control" />
+                    <mat-error *ngIf="riderSignUpForm.controls['firstName'].hasError('required')"
+                        class="invalid-feedback">
+                        First Name is required
                     </mat-error>
                 </mat-form-field>
             </div>
             <div class="form-group">
-                <span>License Plate Number</span>
+                <span>Last name</span>
                 <mat-form-field class="full-width">
-                    <input matInput formControlName="licensePlateNumber" class="form-control" />
-                    <mat-error *ngIf="driverSignUpForm.controls['licensePlateNumber'].hasError('required')" class="invalid-feedback">
-                        License Plate Number is required
+                    <input matInput formControlName="lastName" class="form-control" />
+                    <mat-error *ngIf="riderSignUpForm.controls['lastName'].hasError('required')"
+                        class="invalid-feedback">
+                        Last Name is required
                     </mat-error>
                 </mat-form-field>
+
             </div>
-        </div>
-      
-        <div style="display: flex;">
             <div class="form-group">
-                <span>Car Make</span>
+                <span> Email</span>
                 <mat-form-field class="full-width">
-                    <input matInput formControlName="carMake" class="form-control" />
-                    <mat-error *ngIf="driverSignUpForm.controls['carMake'].hasError('required')" class="invalid-feedback">
-                        Car Make is required
+                    <input matInput formControlName="email" class="form-control" />
+                    <mat-error *ngIf="riderSignUpForm.controls['email'].hasError('required')" class="invalid-feedback">
+                        Email is required
                     </mat-error>
-                </mat-form-field>
-            </div>
-            <div class="form-group">
-                <span>Car Model</span>
-                <mat-form-field class="full-width">
-                    <input matInput formControlName="carModel" class="form-control" />
-                    <mat-error *ngIf="driverSignUpForm.controls['carModel'].hasError('required')" class="invalid-feedback">
-                       Car Model is required
+                    <mat-error *ngIf="riderSignUpForm.controls['email'].hasError('pattern')" class="invalid-feedback">
+                        Please enter a Valid email
                     </mat-error>
                 </mat-form-field>
             </div>
             <div class="form-group">
-                <span>Car Make Year</span>
+                <span> Password</span>
                 <mat-form-field class="full-width">
-                    <input matInput formControlName="carMakeYear" class="form-control" />
-                    <mat-error *ngIf="driverSignUpForm.controls['carMakeYear'].hasError('required')" class="invalid-feedback">
-                        Car make year is required
+                    <input type="password" matInput formControlName="password" class="form-control" />
+                    <mat-error *ngIf="riderSignUpForm.controls['password'].hasError('required')"
+                        class="invalid-feedback">
+                        Password is required
+                    </mat-error>
+
+                </mat-form-field>
+            </div>
+            <div class="form-group">
+                <span> Phone Number</span>
+                <mat-form-field class="full-width">
+                    <input matInput formControlName="phoneNumber" class="form-control" />
+                    <mat-error *ngIf="riderSignUpForm.controls['phoneNumber'].hasError('required')"
+                        class="invalid-feedback">
+                        Phone Number is required
+                    </mat-error>
+
+                </mat-form-field>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary">Register</button>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary" (click)="resetForm()">Clear Form </button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Driver sign up -->
+    <div *ngIf="profileType==='driver'">
+        <form [formGroup]="driverSignUpForm" (ngSubmit)="onDriverSignUpSubmit()">
+            <div class="form-group">
+                <span>First Name</span>
+                <mat-form-field class="full-width">
+                    <input matInput formControlName="firstName" class="form-control" />
+                    <mat-error *ngIf="driverSignUpForm.controls['firstName'].hasError('required')"
+                        class="invalid-feedback">
+                        First Name is required
                     </mat-error>
                 </mat-form-field>
             </div>
-        </div>
-        
-        <div class="form-group">
-            <button class="btn btn-primary">Register</button>
-        </div>
-        <div class="form-group">
-            <button class="btn btn-primary" (click)="resetForm()">Clear Form </button>
-        </div>
-    </form>
+            <div class="form-group">
+                <span>Last name</span>
+                <mat-form-field class="full-width">
+                    <input matInput formControlName="lastName" class="form-control" />
+                    <mat-error *ngIf="driverSignUpForm.controls['lastName'].hasError('required')"
+                        class="invalid-feedback">
+                        Last Name is required
+                    </mat-error>
+                </mat-form-field>
+
+            </div>
+            <div class="form-group">
+                <span> Email</span>
+                <mat-form-field class="full-width">
+                    <input matInput formControlName="email" class="form-control" />
+                    <mat-error *ngIf="driverSignUpForm.controls['email'].hasError('required')" class="invalid-feedback">
+                        Email is required
+                    </mat-error>
+                    <mat-error *ngIf="driverSignUpForm.controls['email'].hasError('pattern')" class="invalid-feedback">
+                        Please enter a Valid email
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="form-group">
+                <span> Password</span>
+                <mat-form-field class="full-width">
+                    <input type="password" matInput formControlName="password" class="form-control" />
+                    <mat-error *ngIf="driverSignUpForm.controls['password'].hasError('required')"
+                        class="invalid-feedback">
+                        Password is required
+                    </mat-error>
+
+                </mat-form-field>
+            </div>
+            <div class="form-group">
+                <span> Phone Number</span>
+                <mat-form-field class="full-width">
+                    <input matInput formControlName="phoneNumber" class="form-control" />
+                    <mat-error *ngIf="driverSignUpForm.controls['phoneNumber'].hasError('required')"
+                        class="invalid-feedback">
+                        Phone Number is required
+                    </mat-error>
+
+                </mat-form-field>
+            </div>
+            <div style="display: flex;">
+                <div class="form-group">
+                    <span>Driver License Number</span>
+                    <mat-form-field class="full-width">
+                        <input matInput formControlName="licenseNumber" class="form-control" />
+                        <mat-error *ngIf="driverSignUpForm.controls['licenseNumber'].hasError('required')"
+                            class="invalid-feedback">
+                            License number is required
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="form-group">
+                    <span>License Plate Number</span>
+                    <mat-form-field class="full-width">
+                        <input matInput formControlName="licensePlateNumber" class="form-control" />
+                        <mat-error *ngIf="driverSignUpForm.controls['licensePlateNumber'].hasError('required')"
+                            class="invalid-feedback">
+                            License Plate Number is required
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div style="display: flex;">
+                <div class="form-group">
+                    <span>Car Make</span>
+                    <mat-form-field class="full-width">
+                        <input matInput formControlName="carMake" class="form-control" />
+                        <mat-error *ngIf="driverSignUpForm.controls['carMake'].hasError('required')"
+                            class="invalid-feedback">
+                            Car Make is required
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="form-group">
+                    <span>Car Model</span>
+                    <mat-form-field class="full-width">
+                        <input matInput formControlName="carModel" class="form-control" />
+                        <mat-error *ngIf="driverSignUpForm.controls['carModel'].hasError('required')"
+                            class="invalid-feedback">
+                            Car Model is required
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="form-group">
+                    <span>Car Make Year</span>
+                    <mat-form-field class="full-width">
+                        <input matInput formControlName="carMakeYear" class="form-control" />
+                        <mat-error *ngIf="driverSignUpForm.controls['carMakeYear'].hasError('required')"
+                            class="invalid-feedback">
+                            Car make year is required
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <button class="btn btn-primary">Register</button>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary" (click)="resetForm()">Clear Form </button>
+            </div>
+        </form>
+    </div>
 </div>

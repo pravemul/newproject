@@ -1,3 +1,19 @@
+$palette: (
+
+ white:#EEECE8,
+
+ lighterGreen:#A3B7A0,
+
+ lightGreen:#588157,
+
+ green: #3A5A40,
+
+ darkGreen:#36523F,
+
+ darkestGreen:#31493D,
+
+);
+
 .invalid-feedback{
     color: red;
     font-size: 12px;
@@ -11,10 +27,6 @@
 .form-group{
     margin: 1rem;
     
-}
-
-form{
-    background-color: aquamarine;
 }
 
 * {

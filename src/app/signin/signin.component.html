@@ -1,16 +1,16 @@
 <h1>Sign-in Form</h1>
 <div class="custom-control custom-radio">
     <input id="rider" type="radio" class="custom-control-input" value="rider" name="profileType" [(ngModel)]="profileType" required>
-<label class="custom-control-label" for="rider">Sign In as Rider</label>
+    <label class="custom-control-label" for="rider">Sign In as Rider</label>
 </div>
 
 
 <div class="custom-control custom-radio">
-<input id="driver" type="radio" class="custom-control-input" value="driver" name="profileType" [(ngModel)]="profileType" required>
-<label class="custom-control-label" for="driver">Sign In as Driver</label>
+    <input id="driver" type="radio" class="custom-control-input" value="driver" name="profileType" [(ngModel)]="profileType" required>
+    <label class="custom-control-label" for="driver">Sign In as Driver</label>
 </div>
 
-<div *ngIf="profileType==='rider'">
+<div *ngIf="profileType==='rider'" class="container">
     <h3>Rider Sign-in Form</h3>
     <form [formGroup]="riderSignInForm"  (ngSubmit)="onRiderSignInSubmit()">
         
