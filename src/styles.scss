@@ -1,4 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Global Color Palette - Aiyushi */
+$palette: (
+
+  white:#EEECE8,
+  lighterGreen:#A3B7A0,
+  lightGreen:#588157,
+  green: #3A5A40,
+  darkGreen:#36523F,
+  darkestGreen:#31493D,
+
+);
+
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
 
