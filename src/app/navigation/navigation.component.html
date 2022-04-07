@@ -1,12 +1,13 @@
 <div class="navbar-container">
     <button class="signup-button" (click)="navigateToSignUp()">Sign Up</button>
-    <button class="signin-button" (click)="navigateToSignIn()">Sign In</button>
+    <button class="signup-button" (click)="navigateToSignIn()">Sign In</button>
 </div>
 
-<div>   
-    <span>Ride in Confidence with Cyber streets</span>
+<div class="navigate">   
+    <div>Ride in Confidence with Cyber streets</div>
+     <br><input [(ngModel)]="address" placeholder="insert destination Address">
 </div>
 
 <div>
-    <input [(ngModel)]="address" placeholder="Address">
+   
 </div>

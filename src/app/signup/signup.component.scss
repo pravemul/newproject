@@ -11,3 +11,19 @@
 .form-group{
     margin: 1rem;
 }
+
+.custom-radio{
+float: left;
+margin-right: 3rem;
+}
+
+.custom-control{
+    margin-bottom: 2rem;
+}
+
+.button-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 1rem;
+}

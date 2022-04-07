@@ -3,26 +3,26 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 export class Rider{
   constructor(
-    public firstname:string,
-    public lastname:string,
+    public firstName:string,
+    public lastName:string,
     public email:string,
     public password:string,
-    public phonenumber:string,
+    public phoneNumber:string,
   ) {}
 }
 
 export class Driver{
   constructor(
-    public firstname:string,
-    public lastname:string,
+    public firstName:string,
+    public lastName:string,
     public email:string,
     public password:string,
-    public phonenumber:string,
-    public driverslicense:string,
-    public licensenumberplate:string,
-    public carmake:string,
-    public carmodel:string,
-    public carmakeyear:number
+    public phoneNumber:string,
+    public licenseNumber:string,
+    public licensePlateNumber:string,
+    public carMake:string,
+    public carModel:string,
+    public carMakeYear:number
   ) {}
 }
 
@@ -37,11 +37,11 @@ export class HttpclientService {
 
   public createRider(rider: any) {
     console.log("test create rider");
-    return this.httpClient.post<Rider>("http://localhost:8080/riders", rider);
+    return this.httpClient.post<Rider>("http://localhost:8080/sample/rider", rider);
   }
 
   public createDriver(driver: any) {
     console.log("test create driver");
-    return this.httpClient.post<Rider>("http://localhost:8080/drivers", driver);
+    return this.httpClient.post<Rider>("http://localhost:8080/sample/driver", driver);
   }
 }

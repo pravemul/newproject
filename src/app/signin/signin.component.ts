@@ -2,6 +2,7 @@ import { Component, OnInit} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormControl, FormBuilder, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpclientService, Rider, Driver } from '../service/httpclient.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signin',
@@ -11,7 +12,7 @@ import { HttpclientService, Rider, Driver } from '../service/httpclient.service'
 
 export class SigninComponent implements OnInit {
 
-  constructor(private formBuilder:FormBuilder) { }
+  constructor(private formBuilder:FormBuilder, private router: Router) { }
 
   profileType: string="rider"
   riderSignInForm=this.formBuilder.group({
@@ -30,7 +31,7 @@ export class SigninComponent implements OnInit {
 
   onSignInSubmit(){
     console.log(  this.riderSignInForm.value,this.riderSignInForm.controls['firstName'].hasError('required'), this.profileType)
-    
+    this.router.navigate(["rider"])
   }
 
   resetForm(){

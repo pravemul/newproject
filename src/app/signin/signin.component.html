@@ -1,11 +1,11 @@
 <h1>Sign-in Form</h1>
-<div class="custom-control custom-radio">
+<div style="padding: 10px;">
     <input id="rider" type="radio" class="custom-control-input" value="rider" name="profileType" [(ngModel)]="profileType" required>
 <label class="custom-control-label" for="rider">Sign In as Rider</label>
 </div>
 
 
-<div class="custom-control custom-radio">
+<div style="padding: 10px;">
 <input id="driver" type="radio" class="custom-control-input" value="driver" name="profileType" [(ngModel)]="profileType" required>
 <label class="custom-control-label" for="driver">Sign In as Driver</label>
 </div>
@@ -13,32 +13,34 @@
 <div *ngIf="profileType==='rider'">
     <h3>Rider Sign-in Form</h3>
     <form [formGroup]="riderSignInForm"  >
+        <div style="display:flex;">
+            <div class="form-group">
+                <span> Email</span>
+                <mat-form-field  class="full-width">
+                    <input matInput formControlName="email" class="form-control" />
+                    <mat-error *ngIf="riderSignInForm.controls['email'].hasError('required')" class="invalid-feedback">
+                        Email is required
+                    </mat-error>
+                    <mat-error *ngIf="riderSignInForm.controls['email'].hasError('pattern')" class="invalid-feedback">
+                        Please enter a Valid email
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="form-group">
+                <span> Password</span>
+                <mat-form-field  class="full-width">
+                    <input matInput formControlName="password" class="form-control" />
+                    <mat-error *ngIf="riderSignInForm.controls['password'].hasError('required')" class="invalid-feedback">
+                        Password is required
+                    </mat-error>
+        
+                </mat-form-field>
+            </div>
+        </div>
+     
         
         <div class="form-group">
-            <span> Email</span>
-            <mat-form-field  class="full-width">
-                <input matInput formControlName="email" class="form-control" />
-                <mat-error *ngIf="riderSignInForm.controls['email'].hasError('required')" class="invalid-feedback">
-                    Email is required
-                </mat-error>
-                <mat-error *ngIf="riderSignInForm.controls['email'].hasError('pattern')" class="invalid-feedback">
-                    Please enter a Valid email
-                </mat-error>
-            </mat-form-field>
-        </div>
-        <div class="form-group">
-            <span> Password</span>
-            <mat-form-field  class="full-width">
-                <input matInput formControlName="password" class="form-control" />
-                <mat-error *ngIf="riderSignInForm.controls['password'].hasError('required')" class="invalid-feedback">
-                    Password is required
-                </mat-error>
-    
-            </mat-form-field>
-        </div>
-        
-        <div class="form-group">
-            <button class="btn btn-primary">Sign-In</button>
+            <button class="signup-button">Sign-In</button>
         </div>
         
     </form>
@@ -47,8 +49,9 @@
 <!-- Driver sign up -->
 <div  *ngIf="profileType==='driver'">
     <h3>Driver Sign-in Form</h3>
-    <form [formGroup]="driverSignInForm">
+    <form [formGroup]="driverSignInForm" (ngSubmit)="onSignInSubmit()">
         
+      <div style="display: flex;">
         <div class="form-group">
             <span> Email</span>
             <mat-form-field  class="full-width">
@@ -71,10 +74,10 @@
     
             </mat-form-field>
         </div>
+      </div>
         <div class="form-group">
-            <button class="btn btn-primary">Sign-In</button>
+            <button class="signup-button" >Sign-In</button>
         </div>
         
     </form>
 </div>
-
