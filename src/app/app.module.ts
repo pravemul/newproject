@@ -12,12 +12,18 @@ import { MatInputModule } from '@angular/material/input';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
 import { HttpClientModule } from '@angular/common/http';
 import { RiderComponent } from './rider/rider.component';
+import { DriverProfileComponent } from './driver-profile/driver-profile.component';
+import { MapComponent } from './map/map.component';
+import { GooglePlaceModule } from 'ngx-google-places-autocomplete';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';	
 @NgModule({
   declarations: [
     AppComponent,
     SignupComponent,
     SigninComponent,
     NavigationComponent,
+    DriverProfileComponent,
+    MapComponent,
     RiderComponent
   ],
   imports: [
@@ -28,7 +34,10 @@ import { RiderComponent } from './rider/rider.component';
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    GooglePlaceModule,
+    FontAwesomeModule,	
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,54 @@
+
+<!--leaf and buttons-->
+<div class="row ms-2 me-2 mb-4 mt-3">
+    <div class="col"><i class="fa-brands fa-envira ms-3 mt-2 icon-large"><h2>Cyber Streets</h2></i></div>
+    
+    <div class="col">
+        <h4 class=" gap-2 d-md-flex me-3 mt-2 justify-content-md-end" *ngFor="let driver of drivers">Hi, {{drivers.firstName}}<i class="fa-regular fa-face-smile"></i></h4>
+    </div>
+  </div>
+  
+  
+  <div style="border-style:solid; border-color:black;  margin:0rem 4rem 0rem 4rem; border-radius: 15px;" class="driver-container">
+      <div style="display:inline-block; vertical-align:top; padding: 1rem">
+          <!-- <img src="assets/profile pic.png" width="auto" alt="img"> -->
+      </div>
+      <div style="display:inline-block; ">
+          <h5>
+          (Name)<br>Driving since (Sign up year)
+          </h5>
+      </div>
+      <div style="display:inline-block; vertical-align:top;" class="star mt-4">
+          
+          <i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i>
+          
+      </div>
+  </div>
+   
+  <div class="row">
+      <div class="col">
+          <div style="margin:1rem 4rem 1rem 4rem">
+              <h3>Your information</h3>
+              <h4 style="padding-left: 1rem;">Email Address:<br>Phone Number:<br>Password:</h4>
+          </div>
+          <div style="margin:0rem 4rem 0rem 4rem">
+              <h3>Your Car's information</h3>
+              <h4 style="padding-left: 1rem;">License Plate Number:</h4>
+              <table style="margin-left: 1rem;">
+                  <tr>
+                      <th>Car Year: </th>
+                      <th>Car Make: </th>
+                      <th>Car Model: </th>
+                  </tr>
+              </table>
+          </div>
+      </div>
+      <div class="col">
+          <h3 style="margin:1rem 4rem 1rem 28rem">Your Reviews</h3>
+          <h4 style="margin-left: 4rem;">(Rider) (Review Date Review Time) : (Review here)</h4>
+      </div>
+  
+  </div>
+  
+  
+  

@@ -1,0 +1,46 @@
+$palette: (
+
+ white:#EEECE8,
+ lighterGreen:#A3B7A0,
+ lightGreen:#588157,
+ green: #3A5A40,
+ darkGreen:#36523F,
+ darkestGreen:#31493D,
+
+);
+
+.fa-brands{
+    font-size: 5rem;
+    color: #EEECE8;
+}
+.fa-face-smile{
+    font-size: 2rem;
+}
+h2{
+    position: absolute;
+    top: 25px;
+    left:100px;
+    color: map-get($palette, white);
+    padding: 1rem 0rem 0rem 1rem;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 3rem;
+}
+
+h5{
+    margin-top: 5rem;
+    padding-top: 10rem;
+}
+.star{
+    padding-left: 13rem;
+    font-size:2rem;
+}
+
+th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+.driver-container {
+    background-color: #588157;
+}

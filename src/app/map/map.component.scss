@@ -1,0 +1,28 @@
+$palette: (
+
+ white:#EEECE8,
+ lighterGreen:#A3B7A0,
+ lightGreen:#588157,
+ green: #3A5A40,
+ darkGreen:#36523F,
+ darkestGreen:#31493D,
+
+);
+
+.container {
+    background-color: map-get($palette, lighterGreen) !important;
+}
+
+h4 {
+    color: map-get($palette, white) !important;
+}
+
+.full {
+    width: 100vw;
+    height: 100vh;
+}
+
+.map-row {
+    height: 500px;
+}
+
